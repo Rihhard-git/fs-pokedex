@@ -7,11 +7,8 @@ on:
 jobs:
   a_test_job:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      
+    steps:      
       - uses: sarisia/actions-status-discord@v1
-        if: always()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "New version of `software` is ready!"
