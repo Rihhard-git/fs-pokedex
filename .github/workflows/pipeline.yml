@@ -52,11 +52,8 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
-    needs: [simple_deployment_pipeline]
+    needs: [deploy]
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: osa11
     steps:
       - uses: actions/checkout@v6
       - name: Bump version and push tag
